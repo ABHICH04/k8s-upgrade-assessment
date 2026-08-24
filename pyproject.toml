@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "k8s-upgrade-analyzer"
+version = "0.1.0"
+description = "Agentic + MCP Kubernetes upgrade feasibility, remediation, and gated execution"
+requires-python = ">=3.11"
+dependencies = [
+    "anthropic>=0.40.0",
+    "click>=8.1.0",
+    "rich>=13.0.0",
+    "pydantic>=2.0.0",
+    "pyyaml>=6.0",
+    "python-dotenv>=1.0.0",
+    "mcp[cli]>=1.2.0",
+]
+
+[project.scripts]
+k8s-upgrade-analyzer = "k8s_upgrade_analyzer.cli:main"
+k8s-upgrade-agent = "agent.orchestrator:main"
+k8s-upgrade-mcp = "mcp_server.server:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["k8s_upgrade_analyzer*", "agent*", "mcp_server*"]

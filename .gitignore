@@ -1,0 +1,16 @@
+__pycache__/
+.DS_Store
+.env
+.cursor/
+.venv*/
+.venv/
+*.egg-info/
+*.log
+*.py[cod]
+build/
+data/
+dist/
+reports/output/
+snapshots/*.json
+plans/
+venv/
